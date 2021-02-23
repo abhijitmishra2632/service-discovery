@@ -12,3 +12,11 @@ services:
       - 9191:9191
     depends_on:
       - service-discovery
+  Hystrix-Dshboard:
+    build: ./Hystrix-Dshboard
+      environment:
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://service-discovery:8761/eureka
+      ports:
+        - 9195:9195
+      depends_on:
+        - service-discovery
